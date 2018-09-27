@@ -1,0 +1,33 @@
+<<!DOCTYPE html>
+    <html>
+
+    <head>
+        <script src="../build/react.js"></script>
+        <script src="../build/react-dom.js"></script>
+        <script src="../build/browser.min.js"></script>
+    </head>
+
+    <body>
+
+        <div id="root"></div>
+
+        <script type="text/babel">
+            var request = new XMLHttpRequest();
+            let photos = [];
+            request.open("GET", "http://jsonplaceholder.typicode.com/photos");
+            request.onreadystatechange = () => {
+                if (request.readyState == 4) {
+                    photos = JSON.parse(request.response);
+                }
+            }
+            
+            ReactDOM.render(
+            <div>
+        
+            </div>,
+            document.getElementById('root')
+    );
+
+        </script>
+
+    </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid rgb(122, 17, 17);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+                    
+    ReactDOM.render(
+        <table>
+         {  
+          () => {
+          let table = [];
+
+            // Outer loop to create parent
+          for (let i = 1; i < 11; i++) {
+            let array = [];
+            //Inner loop to create array
+            for (let j = 1; j < 11; j++) {
+              array.push(<td>{`${j *i}`}</td>);
+            }
+            //Create the parent and add the array
+            table.push(<tr>{array}</tr>)
+          } 
+          return table
+        }()
+        }
+    
+        </table>,
+      document.getElementById('root')
+    );
+
+  </script>
+
+</body>
+
+</html>
